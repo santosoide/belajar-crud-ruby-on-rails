@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 
   # show list the article
   def index
-    @articles = Article.all
+    @articles = Article.all.order('created_at DESC').paginate(page: params[:page], per_page: 10)
   end
 
   # show article by param :id

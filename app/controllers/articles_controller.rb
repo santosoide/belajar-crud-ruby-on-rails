@@ -1,21 +1,26 @@
 class ArticlesController < ApplicationController
 
+  # show list the article
   def index
     @articles = Article.all
   end
 
+  # show article by param :id
   def show
     @article = Article.find(params[:id])
   end
 
+  # show form create
   def new
     @article = Article.new
   end
 
+  # show edit form
   def edit
     @article = Article.find(params[:id])
   end
 
+  # store new data
   def create
     @article = Article.new(article_params)
 
@@ -26,6 +31,7 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # update data
   def update
     @article = Article.find(params[:id])
 
@@ -36,6 +42,7 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # delete data
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
@@ -47,6 +54,5 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :text)
   end
-
 
 end

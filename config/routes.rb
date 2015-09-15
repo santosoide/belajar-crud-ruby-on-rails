@@ -34,9 +34,7 @@ Rails.application.routes.draw do
   #     resource :seller
   #   end
 
-  resources :articles do
-    resources :articles
-  end
+  resources :articles
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
